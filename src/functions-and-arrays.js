@@ -51,16 +51,30 @@ const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-const averageNumbers = (array) => {
-  if(!array.length){
-    return null
-  } else {
-    return average = sumNumbers(array)/2
-  }
-};
+function averageNumbers (numArray) {
+  if(!numArray.length) {
+    return null;
+  } 
+
+  let average = sumNumbers(numArray) / numArray.length;
+  return average;
+}
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
+
+function averageWordLength(strArray) {
+  if(!strArray.length) {
+    return null;
+  }
+  let total = 0;
+  for(let counter = 0; counter < strArray.length; counter++) {
+    total += strArray[counter].length;
+    
+    let average = total / strArray.length;
+    return average
+  }
+}
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -77,8 +91,41 @@ const wordsUnique = [
   'bring'
 ];
 
+function uniquifyArray(arr) {
+  if(arr.length === 0)
+  return null;
+
+  let uniqueArray = [];
+
+  for(counter = 0; counter < arr.length; counter++) {
+    if(uniqueArray.indexOf(arr[counter]) === -1) {
+      uniqueArray.push(arr[i])
+    }
+  }
+  
+  return uniqueArray;
+}
+
+
+
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
+
+function doesWordExist(wordsArr, word) {
+
+  if(wordsArr.length === 0) {
+    return null;
+  }
+
+  for(let counter = 0; counter < wordsArr.length; counter++) {
+    if (wordsArr[i] === word) {
+
+      return true
+    }
+  }
+
+  return false
+}
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -94,6 +141,21 @@ const wordsCount = [
   'disobedience',
   'matter'
 ];
+
+function howManyTimes(wordsArr, word) {
+  if (wordsArr.length === 0) {
+    return 0;
+  }
+
+  let numTimes = 0
+  for(let counter = 0; counter < wordsArr.length; counter++) {
+    if(wordsArr[i] === word) {
+      numTimes++;
+    }
+  }
+
+  return numTimes
+}
 
 // Iteration #8: Bonus
 
